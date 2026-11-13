@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StockMate - Inventory Management System">
+  <title>StockMate | Inventory Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="StockMate home">
+        <span class="brand-mark">S</span><span>stock<span class="brand-light">mate</span><small>INVENTORY MANAGER</small></span>
+      </a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span>Dashboard</button>
+        <button class="nav-item" data-page="products"><span class="nav-icon">▤</span>Products</button>
+        <button class="nav-item" data-page="categories"><span class="nav-icon">▧</span>Categories</button>
+        <button class="nav-item" data-page="suppliers"><span class="nav-icon">♧</span>Suppliers</button>
+        <button class="nav-item" data-page="transactions"><span class="nav-icon">⇄</span>Stock transactions</button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▥</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Use the guide in the project README to get started.</p><a href="README.md" target="_blank">Read documentation ↗</a></div>
+        <div class="profile"><div class="avatar">A</div><div><strong>Administrator</strong><small>StockMate Admin</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="top-left"><button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button><div><div class="eyebrow">INVENTORY WORKSPACE</div><h1 id="pageTitle">Dashboard</h1></div></div>
+        <div class="top-actions"><div class="today-chip"><span>◷</span><span id="todayDate"></span></div><button class="primary-btn" id="quickStockIn">＋ Add stock</button></div>
+      </header>
+      <section id="pageContent" class="content"></section>
+      <footer class="footer">© <span id="year"></span> StockMate · BCA 5th Semester Minor Project <span>Built for smarter stock control</span></footer>
+    </main>
+  </div>
+
+  <!-- Reusable dialogs -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><div class="eyebrow" id="modalEyebrow">STOCKMATE</div><h2 id="modalTitle">Add product</h2></div><button class="icon-btn" id="closeModal" aria-label="Close">×</button></div>
+      <form id="modalForm"><div id="modalFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="cancelModal">Cancel</button><button type="submit" class="primary-btn" id="modalSubmit">Save changes</button></div></form>
+    </section>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
